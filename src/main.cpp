@@ -35,7 +35,6 @@ void setup() {
   }
 }
 
-// put function definitions here:
 
 float Prunning(float param[])
 {
@@ -90,7 +89,6 @@ static void smartDelay(long ms)
 void sendData() {
   //Bundling
    String message = "{\"id\": \"point17\" , \"lat\":" + String(gps.location.lat(), 6) + ", \"lon\":" + String(gps.location.lng(), 6) + ", \"temperatura\":" + String(readingTem(3)) +", \"humedad\":" + String(readingHum(3)) + "}";
-   Serial.println(message);
 
   if (client.connect(host, port)) { 
     
@@ -113,13 +111,10 @@ void sendData() {
 }
 
 void loop() {
-    delay(10000);
-    smartDelay(100);
+  delay(10000);
+  smartDelay(100);
   Serial.println("Midiendo temp y humedad");
-  // put your main code here, to run repeatedly:
-  //lectura y prunning de temperatura
   Serial.println(readingTem(3));
-  //lectura y prunning de humedad
   Serial.println(readingHum(3));
 
   longitud = (gps.location.lng());
